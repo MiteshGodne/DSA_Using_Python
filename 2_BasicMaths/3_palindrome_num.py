@@ -10,4 +10,4 @@ def is_palindrome_num(n):
         return False
 
 num = int(input("Enter a number : "))
-print(is_palindrome_num(num))
+print(is_palindrome_num(num))          #  Time Complexity = O(log_10 n) where n is number of digits in num

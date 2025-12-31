@@ -9,6 +9,18 @@ def is_prime(n):
         i = i+1
     return True
 
-
 num = int(input("Enter a number to check for prime : "))
 print(is_prime(num))
+
+
+def prime_factorization(n):
+    i = 2
+    factors = []
+    while n > 1:
+        if n % i == 0:
+            factors.append(i)
+            n /= i
+        else:
+            i += 1
+    return factors
+print(prime_factorization(num))

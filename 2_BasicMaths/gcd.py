@@ -1,7 +1,6 @@
 num1 = abs(int(input("Enter a number : ")))
 num2 = abs(int(input("Enter another number : ")))
 
-#
 def gcd_by_euclid_recursion(n1, n2):
     small = min(n1, n2)
     large = max(n1, n2)

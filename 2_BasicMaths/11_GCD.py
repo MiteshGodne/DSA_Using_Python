@@ -31,4 +31,4 @@ def gcd_by_gabriel(n1, n2):
     else:
         return gcd_by_gabriel(maxi % mini, mini)
 
-print("GCD : ", gcd_by_gabriel(num1, num2))           # TC = O(log n)
+print("GCD : ", gcd_by_gabriel(num1, num2))           # TC = O(log_phi min(num1, num2))

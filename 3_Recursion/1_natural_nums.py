@@ -1,14 +1,12 @@
 num = int(input("Enter a number : "))
-temp = 1
 # ascending natural numbers
-def natural_nums_asc(n):
-    global temp, num
-    print(temp, end=" ")
-    temp += 1
-    if temp > num:
+def natural_nums_asc(curr, n):
+    print(curr, end=" ")
+    curr += 1
+    if curr > num:
         return
-    natural_nums_asc(n-1)
-natural_nums_asc(num)
+    natural_nums_asc(curr,n)
+natural_nums_asc(1,num)
 
 print()
 # descending natural numbers

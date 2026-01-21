@@ -1,6 +1,20 @@
 n = int(input("Enter the number of rows: "))
 
 """
+E 
+D E 
+C D E 
+B C D E 
+A B C D E 
+"""
+for i in range(n):
+    for j in range(i+1):
+        print(chr(64+n-i+j), end=' ')
+    print()
+
+
+print()
+"""
         A 
       A B A 
     A B C B A 
@@ -17,7 +31,7 @@ for i in range(n):
     print()
 
 
-
+print()
 """
 A B C D E 
 A B C D 
@@ -32,7 +46,7 @@ for i in range(n):
     print()
 
 
-
+print()
 """
 A 
 A B 
@@ -40,14 +54,13 @@ A B C
 A B C D 
 A B C D E 
 """
-
 for i in range(n):
     for j in range(i+1):
         print( chr(65 + j), end=' ')
     print()
 
 
-
+print()
 """
 A 
 B B 

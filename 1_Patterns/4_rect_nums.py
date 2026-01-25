@@ -9,6 +9,7 @@ n = int(input("Enter the number of rows : "))
 4 3 3 3 3 3 4 
 4 4 4 4 4 4 4 
 """
+# Brute Force
 dec = n+1
 for i in range(n):
     dec -= 1
@@ -19,7 +20,6 @@ for i in range(n):
     for l in range(n-i+1, n+1):
         print(l, end=' ')
     print()
-
 for i in range(n-1):
     dec += 1
     for j in range(n, i+1, -1):
@@ -29,6 +29,19 @@ for i in range(n-1):
     for l in range(dec, n+1):
         print(l, end=' ')
     print()
+
+print()
+# A bit better way -
+for i in range(2*n-1):
+   for j in range(2*n-1):
+       top = i
+       left = j
+       right = (2*n-2)-j
+       bottom = (2*n-2)-i
+       print(n - min(top, left, bottom, right), end=' ')
+   print()
+
+
 
 print()
 """

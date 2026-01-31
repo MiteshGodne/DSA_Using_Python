@@ -2,11 +2,10 @@ from math import sqrt, ceil
 def divisors(n):
     l = []
     for i in range(1, int(sqrt(n))+1):
-        if i == n/i:    # used to prevent it from including perfect sqrt twice
+        if n % i == 0:
             l.append(i)
-        elif n % i == 0:
-            l.append(int(n/i))
-            l.append(i)
+            if i != n/i:    # used to prevent it from including perfect sqrt number twice
+                l.append(int(n/i))
     return l
 num = int(input("Enter a number : "))
 print(divisors(num))               # Time Complexity - O(sqrt(n))

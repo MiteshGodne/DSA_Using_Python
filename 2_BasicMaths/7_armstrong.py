@@ -1,12 +1,8 @@
-from math import pow
+from math import pow, log10, ceil
 num = int(input("Enter a number : "))
 
 def count_digits(n):
-    count = 0
-    while n > 0:
-        count = count + 1
-        n = int(n/10)
-    return count
+    return ceil(log10(n))                     # counting digits
 
 def armstrong(n):
     count = count_digits(n)

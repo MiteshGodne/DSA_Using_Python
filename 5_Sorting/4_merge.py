@@ -27,5 +27,5 @@ def merge_sort(arr: int, low: int, high: int):
     
 arr = [1,3,6,2,2,8,2,8,0,-1,102]
 merge_sort(arr, 0, len(arr)-1)
-print(arr)
+print(*arr)
         

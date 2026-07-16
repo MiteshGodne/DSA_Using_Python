@@ -14,6 +14,21 @@ class Solution:
             rev = rev*10 + digit
         return rev if x >= 0 else rev*(-1)
     
+        # Optimized 
+    def reverse_v2(self, x: int) -> int:
+        a=""
+        k=""
+        for i in str(x):
+            if i.isdigit():
+                k=k+str(i)
+                print(k)
+            else:
+                a+=str(i)
+        q=int(a+k[::-1]) 
+        if q > -2147483648  and  q<2147483647:
+            return q
+        return 0
+    
 if __name__ == '__main__':
     obj = Solution()
-    print(obj.reverse(165848446841))
+    print(obj.reverse(1644684))

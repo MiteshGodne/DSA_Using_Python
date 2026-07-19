@@ -24,6 +24,16 @@ class Solution:
         self.my_rev(nums, n-k, n-1)
         self.my_rev(nums, 0, n-1)
         
+    # Optimized using slice operator
+    def rotate(self, nums: list[int], k: int) -> None:
+        n = len(nums)
+        k%=n
+        if k<=0:
+            return
+        nums.reverse()        
+        nums[:k] = reversed(nums[:k])
+        nums[k:n] = reversed(nums[k:n])
+        
 if __name__ == "__main__":
     obj = Solution()
     arr = [1,2,3]

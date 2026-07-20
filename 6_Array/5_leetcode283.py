@@ -19,8 +19,19 @@ class Solution:
                 i+=1
             j+=1
             
+    # Optimized by removing extra loops. 
+    def moveZeroes(self, nums: list[int]) -> None:
+        n = len(nums)
+        i = 0
+        for j in range(n):
+            if nums[j] != 0:
+                nums[i], nums[j] = nums[j], nums[i]
+                i+=1
+            
 if __name__ == "__main__":
     obj = Solution()
-    arr = [1,0,0,0,0,3]
+    arr = [1,0,0,0,0,3,3,7,0]
     obj.moveZeroesBrute(arr)
+    print(arr)
+    obj.moveZeroes(arr)
     print(arr)

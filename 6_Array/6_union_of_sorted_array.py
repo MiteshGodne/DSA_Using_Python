@@ -24,8 +24,14 @@ def union_set(nums1: list[int], nums2:list[int]) -> None:
     union = set(nums1+nums2)
     union = sorted(union)
     print(union)
+    
+from sortedcontainers import SortedSet
+def union_sorted_set(nums1: list[int], nums2:list[int]) -> None:
+    union = SortedSet(nums1+nums2)           # TC - O((m+n)log(m+n)) & SC - O(n + m) 
+    print(union)
    
 arr1 = [1,3,5,5] 
 arr2 = [4,4,15,26,47]   
 union_hashmap(arr1, arr2)
 union_set(arr1, arr2)
+union_sorted_set(arr1, arr2)

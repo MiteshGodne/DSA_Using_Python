@@ -9,5 +9,5 @@ class Solution:
     
 if __name__ == "__main__":
     obj = Solution()
-    nums = [0,1,2,2,1,5,5,3,3,-7,8,8]
+    nums = [1,2,2,1,5,5,3,3,-7,8,8]
     print(obj.singleNumber(nums))

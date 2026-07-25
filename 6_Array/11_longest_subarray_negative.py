@@ -1,4 +1,5 @@
 # Hashing -> TC:O(N * log N) + SC:O(N) -> also for negatives   
+
 def longest_subarray(nums : list[int], k: int) -> int:
     prefix_sum = {0: -1}
     n = len(nums)

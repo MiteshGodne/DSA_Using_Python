@@ -20,9 +20,18 @@ class Solution:
             val = val * (N-k)//k
             row.append(val)
         return row
+    
+    def findPascalElement(self, r: int, c: int) -> int:
+        n = r-1
+        k = c-1
+        res = 1
+        for i in range(k):
+            res *= n-i
+            res //= (i+1)
+        return res
 
-        
 if __name__ == "__main__":
     obj = Solution()    
     print(obj.generate(7))
     print(obj.getNthRow(6))
+    print(obj.findPascalElement(6,4))

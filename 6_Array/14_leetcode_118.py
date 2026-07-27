@@ -12,6 +12,17 @@ class Solution:
             pascal.append(row)
         return pascal
         
+    def getNthRow(self, N: int) -> list[int]:
+        row = []
+        val = 1
+        row.append(val)
+        for k in range(1, N):
+            val = val * (N-k)//k
+            row.append(val)
+        return row
+
+        
 if __name__ == "__main__":
     obj = Solution()    
     print(obj.generate(7))
+    print(obj.getNthRow(6))

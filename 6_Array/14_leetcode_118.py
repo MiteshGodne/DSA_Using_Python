@@ -11,7 +11,7 @@ class Solution:
                     row.append(pascal[i-1][j-1] + pascal[i-1][j])
             pascal.append(row)
         return pascal
-                
+        
 if __name__ == "__main__":
     obj = Solution()    
-    print(obj.generate(5))
+    print(obj.generate(7))

@@ -18,9 +18,25 @@ class Solution:
              nums[i] = 1
         for i in range(zeroes+ones, n):
              nums[i] = 2
+             
+    # Dutch National Flag Algorithm - 3 pointers and 4 parts of array (0 to low-1 = zeros, low to mid-1 = ones, mid to high = unsorted, high+1 to n = twos)
+    def sortColors_v2(self, nums: list[int]) -> None:
+            low, mid, high = 0, 0, len(nums)-1
+            while mid <= high:
+                if nums[mid] == 0:
+                    nums[low], nums[mid] = nums[mid], nums[low]
+                    low+=1
+                    mid+=1
+                elif nums[mid] == 1:
+                    mid+=1
+                else:
+                    nums[mid], nums[high] = nums[high], nums[mid]
+                    high-=1
     
 if __name__ == '__main__':
     obj = Solution()
     nums = [1,2,0,1,0,1]
     obj.sortColors_v1(nums)
+    print(nums)
+    obj.sortColors_v2(nums)
     print(nums)

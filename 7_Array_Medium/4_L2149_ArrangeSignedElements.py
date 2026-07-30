@@ -4,6 +4,8 @@ For all integers with the same sign, the order in which they were present in num
 The rearranged array begins with a positive integer.
 Return the modified array after rearranging the elements to satisfy the aforementioned conditions.'''
 
+# Two Pointers
+
 class Solution:
     def rearrangeArray_v1(self, nums: list[int]) -> list[int]:
         n = len(nums)

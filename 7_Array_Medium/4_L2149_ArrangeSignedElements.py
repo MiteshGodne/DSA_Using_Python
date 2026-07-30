@@ -9,16 +9,28 @@ Return the modified array after rearranging the elements to satisfy the aforemen
 class Solution:
     def rearrangeArray_v1(self, nums: list[int]) -> list[int]:
         n = len(nums)
+        res = [0]*n
         posi = []
         nega = []
         for num in nums:
             nega.append(num) if num < 0 else posi.append(num)
         for i in range(n//2):
-            nums[2*i] = posi[i]
-            nums[2*i+1] = nega[i]
-        return nums
+            res[2*i] = posi[i]
+            res[2*i+1] = nega[i]
+        return res
     
     def rearrangeArray_v2(self, nums: list[int]) -> list[int]:
+        n = len(nums)
+        posi = []
+        nega = []
+        for num in nums:
+            nega.append(num) if num < 0 else posi.append(num)
+        res = [0]*n
+        res[0::2] = posi
+        res[1::2] = nega
+        return res
+    
+    def rearrangeArray_v3(self, nums: list[int]) -> list[int]:
         n = len(nums)
         res = [0]*n
         posi = 0
@@ -36,5 +48,5 @@ if __name__ == '__main__':
     obj = Solution()
     nums = [3,1,-2,-5,2,-4]
     print(obj.rearrangeArray_v1(nums))
-    nums = [3,1,-2,-5,2,-4]
     print(obj.rearrangeArray_v2(nums))
+    print(obj.rearrangeArray_v3(nums))

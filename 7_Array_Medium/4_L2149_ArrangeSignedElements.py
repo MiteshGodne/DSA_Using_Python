@@ -43,10 +43,38 @@ class Solution:
                 res[posi] = nums[i]
                 posi+=2
         return res
+    
+    # When positives and negatives might not be equal
+    def rearrangeArray_v4(self, nums: list[int]) -> list[int]:
+        n = len(nums)
+        res = [0]*n
+        posi = []
+        nega = []
+        for num in nums:
+            nega.append(num) if num < 0 else posi.append(num)
+        plen = len(posi)
+        nlen = len(nega)
+        for i in range(min(plen, nlen)):
+            res[2*i] = posi[i]
+            res[2*i+1] = nega[i]   
+        if plen > nlen:
+            idx = nlen*2
+            for i in range(nlen, plen):
+                res[idx] = posi[i]
+                idx+=1
+        elif nlen > plen:
+            idx = plen*2
+            for i in range(plen, nlen):
+                res[idx] = nega[i]
+                idx+=1
+        return res
         
 if __name__ == '__main__':
     obj = Solution()
-    nums = [3,1,-2,-5,2,-4]
+    nums = [3,1,-2,-5,-2,4]
     print(obj.rearrangeArray_v1(nums))
     print(obj.rearrangeArray_v2(nums))
     print(obj.rearrangeArray_v3(nums))
+    # Variation 
+    nums = [3,1,-2,-5,-2,-4,-9,6,-10,-32]
+    print(obj.rearrangeArray_v4(nums))

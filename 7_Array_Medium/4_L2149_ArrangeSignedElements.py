@@ -15,8 +15,23 @@ class Solution:
             nums[2*i] = posi[i]
             nums[2*i+1] = nega[i]
         return nums
+    
+    def rearrangeArray_v2(self, nums: list[int]) -> list[int]:
+        n = len(nums)
+        res = [0]*n
+        posi = 0
+        nega = 1
+        for i in range(n):
+            if nums[i] < 0:
+                res[nega] = nums[i]
+                nega+=2
+            else:
+                res[posi] = nums[i]
+                posi+=2
+        return nums
         
 if __name__ == '__main__':
     obj = Solution()
     nums = [3,1,-2,-5,2,-4]
     print(obj.rearrangeArray_v1(nums))
+    print(obj.rearrangeArray_v2(nums))

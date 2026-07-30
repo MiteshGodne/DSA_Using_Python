@@ -30,10 +30,11 @@ class Solution:
             else:
                 res[posi] = nums[i]
                 posi+=2
-        return nums
+        return res
         
 if __name__ == '__main__':
     obj = Solution()
     nums = [3,1,-2,-5,2,-4]
     print(obj.rearrangeArray_v1(nums))
+    nums = [3,1,-2,-5,2,-4]
     print(obj.rearrangeArray_v2(nums))

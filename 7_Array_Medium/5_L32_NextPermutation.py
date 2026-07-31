@@ -9,7 +9,7 @@ class Solution:
                 nums[:] = all_perms[i+1] if i+1 < len(all_perms) else all_perms[0]
                 return
                 
-    def generate_permutation(self, nums: list[int]) -> list[list[int]]:
+    def generate_permutation(self, nums: list[int]) -> list[list[int]]:         # TC- O(N! * N) 
         nums = sorted(nums)
         n = len(nums)
         if n == 0:

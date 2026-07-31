@@ -32,6 +32,22 @@ class Solution:
             if all_perms[i] == nums:
                 nums[:] = all_perms[i+1] if i+1 < len(all_perms) else all_perms[0]
                 return 
+            
+    def nextPermutation_v3(self, nums: list[int]) -> None:                    # TC- O(N)
+        n = len(nums)
+        idx = -1
+        for i in range(n-2,-1,-1):
+            if nums[i] < nums[i+1]:
+                idx = i
+                break
+        if idx == -1:
+            nums.reverse()
+            return nums
+        for i in range(n-1, idx, -1):
+            if nums[i] > nums[idx]:
+                nums[i], nums[idx] = nums[idx], nums[i]
+                break
+        nums[idx+1:] = reversed(nums[idx+1:])
         
 if __name__ == '__main__':
     obj = Solution()
@@ -40,4 +56,5 @@ if __name__ == '__main__':
     print(nums)
     obj.nextPermutation_v2(nums)
     print(nums)
-    
+    obj.nextPermutation_v3(nums)
+    print(nums)

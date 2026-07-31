@@ -24,10 +24,20 @@ class Solution:
                 if [elem]+perm not in perms:
                     perms.append([elem]+perm)
         return perms
+    
+    def nextPermutation_v2(self, nums: list[int]) -> None:                     # TC- O(N! * N)
+        from itertools import permutations
+        all_perms = [list(perm) for perm in sorted(set(permutations(nums)))]   # convert tuple into list to compare
+        for i in range(len(all_perms)):
+            if all_perms[i] == nums:
+                nums[:] = all_perms[i+1] if i+1 < len(all_perms) else all_perms[0]
+                return 
         
 if __name__ == '__main__':
     obj = Solution()
     nums = [2,1,5,4,3,0,0]
     obj.nextPermutation_v1(nums)
+    print(nums)
+    obj.nextPermutation_v2(nums)
     print(nums)
     
